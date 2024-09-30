@@ -1,0 +1,203 @@
+.background-video {
+    position: fixed; 
+    bottom: 0;  /* Mantiene el video pegado a la base */
+    left: 50%;  /* Centra el video horizontalmente */
+    transform: translateX(-50%); /* Ajusta la posición para centrar */
+    width: 1500px;  /* Cambia este valor para aumentar o disminuir el ancho */
+    height: auto; /* Mantiene la proporción del video */
+    max-height: 100%; /* Cambia este valor para ajustar la altura máxima del video */
+    object-fit: cover; 
+    z-index: 0; /* Asegura que el video esté por encima de la imagen de fondo */
+}
+
+.intro, .cuenta {
+    position: relative; /* Necesario si usas z-index */
+    z-index: 1; /* Asegura que esté por encima del video */
+    margin: 0;
+}
+
+
+
+
+.intro {
+
+font-family: Poppins;
+font-weight: 500;
+color: rgba(171, 73, 204);
+font-size: large;
+display: flex;
+justify-content: center; 
+align-items: center;    
+border: 2px solid rgb(171, 73, 204);
+
+
+width: auto;
+height: 92.193px;
+flex-shrink: 0;
+margin-left: 9px;
+margin-right: 6px;
+margin-top: 35.9px;
+
+border-radius: 12px;
+background: rgba(255, 255, 255, 0.90);
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+ 
+animation: shake-animation 2s ease-in-out infinite;
+animation-delay: 1s;
+
+}
+
+
+@keyframes shake-animation {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.cuenta {
+    display: flex;
+    justify-content: center; 
+    align-items: center;   
+    flex-direction: column; /* Esto apila los elementos verticalmente */
+    width: auto;
+    height: 116.949px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: rgba(171, 73, 204, 0.90);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-left: 10px;
+    margin-right: 18.4px;
+    margin-top: 45px;
+    position: relative; /* Asegúrate de que esté en la misma posición */
+}
+
+h1 {
+
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 1px;
+    margin-bottom: 5px;
+}
+
+
+#clock{
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.5s ease; /* Añade una transición suave */
+    margin-top: 1px;
+    }
+
+
+
+    body {
+       
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Asegura que el body tenga al menos la altura de la ventana */
+            overflow-y: scroll; /* Permitir scroll */
+            overflow: hidden; /* Esto puede causar problemas */
+            margin: 0; /* Asegúrate de que no haya márgenes en el body */
+            padding: 0; /* Asegúrate de que no haya relleno en el body */
+            max-width: 360px;
+            max-height: 800px;
+      
+        
+    }
+    
+    footer {
+
+    position: relative; /* Asegúrate de que el footer tenga posición relativa */
+    z-index: 2; /* Mantén el z-index para que esté por encima de la animación */
+    margin-top: auto; /* Esto sigue siendo importante */
+
+    }
+
+    .fecha, .lugar, .bebida {
+        position: relative; /* Para mantener su flujo normal */
+        z-index: 3; /* Asegúrate de que estén por encima de .animacionfooter */
+    }
+    
+
+.fecha {
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 313.89px;
+height: 30px;
+flex-shrink: 0;
+margin-left: 20px;
+margin-bottom: 2px;
+}
+
+.lugar {
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+   
+}
+
+
+.bebida {
+    width: 121.589px;
+    height: 27.619px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #533A60;
+    color: #C6B7D3;
+
+text-align: center;
+font-family: Poppins;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-left: 110px;
+
+margin-bottom: 7px;
+}
+
+
+.animacionfooter {
+    position: absolute; /* Mantener como absolute para superponerse */
+    bottom: 0; /* Alinea en la parte inferior del footer */
+    left: 0; /* Comienza desde el borde izquierdo */
+    width: 100%; /* Abarca todo el ancho de la pantalla */
+    height: 160px; /* Mantén la altura que desees */
+    background-image: linear-gradient(rgb(171, 73, 204), rgb(79, 58, 88));
+    animation-name: animacionfooter;
+    animation-duration: 2.5s;
+    animation-delay: 0s; /* Cambiar a 0s para que inicie inmediatamente */
+    animation-iteration-count: infinite;
+    z-index: 1; /* Asegúrate de que esté debajo de otros elementos */
+    margin: 0; /* Asegúrate de que no haya margen */
+}
+
+
+
+@keyframes animacionfooter {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-5px); } /* Cambia de -5px a -3px */
+    50% { transform: translateY(5px); } /* Cambia de 5px a 3px */
+    75% { transform: translateY(-5px); } /* Cambia de -5px a -3px */
+    100% { transform: translateY(0); }
+}
