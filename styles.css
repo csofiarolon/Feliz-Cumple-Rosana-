@@ -1,30 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-html, body {
-    width: 360px;
-    height: 800px;
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Evitar el scroll */
-    position: relative;
+
+@media (max-width: 768px) { /* Para pantallas de tamaño mobile */
+    .background-video {
+        width: 100vw;  /* Ocupará el ancho completo del viewport */
+        height: 100vh; /* Ocupará el alto completo del viewport */
+        object-fit: cover;  /* Asegura que cubra todo el contenedor */
+    }
+}
+
+.abstodo {
+width: 100%;
+margin:0 auto;
+overflow: visible;
+max-width: 360px;
 }
 
 .background-video {
     position: fixed; 
-    bottom: 0;  
-    left: 50%;  
-    transform: translateX(-50%); 
-    width: 360px; /* Asegura que el video esté del tamaño correcto */
-    height: 800px; 
+    bottom: 0;  /* Mantiene el video pegado a la base */
+    left: 50%;  /* Centra el video horizontalmente */
+    transform: translateX(-50%); /* Ajusta la posición para centrar */
+    width: 100%;  /* Cambia este valor para aumentar o disminuir el ancho */
+    height: 100vh; /* Mantiene la proporción del video */
     object-fit: cover; 
-    z-index: 0; 
+    z-index: 0; /* Asegura que el video esté por encima de la imagen de fondo */
 }
 
-.intro, .cuenta, footer {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: auto; /* Ajusta el tamaño de los elementos interiores según el contenido */
+.intro, .cuenta {
+    position: relative; /* Necesario si usas z-index */
+    z-index: 5; /* Asegura que esté por encima del video */
+    margin: 0;
 }
 
 .intro {
@@ -39,8 +45,8 @@ align-items: center;
 border: 2px solid rgb(171, 73, 204);
 
 
-width: auto;
-height: 92.193px;
+width: 90%;
+height: 80%;
 flex-shrink: 0;
 margin-left: 9px;
 margin-right: 6px;
@@ -69,8 +75,9 @@ animation-delay: 1s;
     justify-content: center; 
     align-items: center;   
     flex-direction: column; /* Esto apila los elementos verticalmente */
-    width: auto;
-    height: 116.949px;
+    
+width: 90%;
+height: 80%;
     flex-shrink: 0;
     border-radius: 12px;
     background: rgba(171, 73, 204, 0.90);
@@ -107,23 +114,9 @@ h1 {
     margin-top: 1px;
     }
 
-
-
-    body {
-       
-        max-width: 360px;
-        max-height: 800px;
-        display: flex;
-        flex-direction: column;
-      
-        
-    }
-    
-    footer {
-
-    position: relative; /* Asegúrate de que el footer tenga posición relativa */
-    z-index: 2; /* Mantén el z-index para que esté por encima de la animación */
-    margin-top: auto; /* Esto sigue siendo importante */
+    .footer{
+position: fixed;
+bottom: 0;
 
     }
 
@@ -180,20 +173,45 @@ margin-bottom: 7px;
 }
 
 
+/* Para pantallas de tamaño mobile */
+@media (max-width: 1080px) {
+    .animacionfooter {
+        width: 100vw;  /* Ocupará el ancho completo del viewport */
+        height: 100vh; /* Ocupará el alto completo del viewport */
+        left: 50%;
+        transform: translateX(-50%); /* Asegúrate de que se centre */
+    }
+}
+
+/* Para pantallas de escritorio */
+@media (min-width: 1081px) {
+    .animacionfooter {
+        display: none; /* Oculta el footer en pantallas de escritorio */
+    }
+}
+
 .animacionfooter {
-    position: absolute; /* Mantener como absolute para superponerse */
-    bottom: 0; /* Alinea en la parte inferior del footer */
-    left: 0; /* Comienza desde el borde izquierdo */
-    width: 100%; /* Abarca todo el ancho de la pantalla */
-    height: 160px; /* Mantén la altura que desees */
+    position: fixed;
+    bottom: 0;
+    width: 25.4vw; /* 25% del ancho del viewport */
+    height: 19vh; /* 20% del alto del viewport */
+    
+    left: 0%;
+    transform: translateX(-20%); /* Ajusta la posición para centrar horizontalmente */
+
+    min-width: 420px; /* Ancho mínimo para evitar que se encoja demasiado */
+    min-height: 160px;
+    
     background-image: linear-gradient(rgb(171, 73, 204), rgb(79, 58, 88));
     animation-name: animacionfooter;
     animation-duration: 2.5s;
-    animation-delay: 0s; /* Cambiar a 0s para que inicie inmediatamente */
+    animation-delay: 0s;
     animation-iteration-count: infinite;
-    z-index: 1; /* Asegúrate de que esté debajo de otros elementos */
-    margin: 0; /* Asegúrate de que no haya margen */
+    z-index: 1; 
 }
+
+
+
 
 
 
