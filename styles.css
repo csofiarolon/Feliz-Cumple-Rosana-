@@ -9,6 +9,19 @@
     }
 }
 
+
+@media (min-width: 361px) { /* Para pantallas de tamaño mobile */
+    .background-video {
+        width: 200vh;
+    }
+}
+
+@media (min-width: 361px) { /* Para pantallas de tamaño mobile */
+    html {
+        background-color: #C09FC3;
+    }
+}
+
 .abstodo {
 width: 100%;
 margin:0 auto;
@@ -21,8 +34,8 @@ max-width: 360px;
     bottom: 0;  /* Mantiene el video pegado a la base */
     left: 50%;  /* Centra el video horizontalmente */
     transform: translateX(-50%); /* Ajusta la posición para centrar */
-    width: 100%;  /* Cambia este valor para aumentar o disminuir el ancho */
-    height: 100vh; /* Mantiene la proporción del video */
+    width: 50vh;  /* Cambia este valor para aumentar o disminuir el ancho */
+    height: auto; /* Mantiene la proporción del video */
     object-fit: cover; 
     z-index: 0; /* Asegura que el video esté por encima de la imagen de fondo */
 }
